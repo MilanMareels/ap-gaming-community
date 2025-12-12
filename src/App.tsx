@@ -388,15 +388,13 @@ const PublicWebsite = ({
               </div>
               <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9]">
                 LEVEL{" "}
-                <span className="text-transparent bg-clip-text from-red-600 to-red-400" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.1)" }}>
+                <span className="text-transparent bg-gradient-to-br bg-clip-text from-red-600 to-red-400" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.1)" }}>
                   UP
-                </span>{" "}
+                </span>
                 <br />
                 YOUR <span className="text-white">GAME</span>
               </h1>
-              <p className="text-xl text-gray-400 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                De ultieme plek voor elke student. Esports, casual gaming en community events op Campus Spoor Noord.
-              </p>
+              <p className="text-xl text-gray-400 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">De ultieme plek voor elke student. Esports, casual gaming en community events op Campus Ellerman.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#timetable"
@@ -525,7 +523,7 @@ const PublicWebsite = ({
                 {timetable.map((day, idx) => (
                   <ScrollReveal key={idx} direction="right" delay={idx * 100}>
                     <div className="flex flex-col md:flex-row bg-slate-950 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition-colors">
-                      <div className="bg-slate-900/50 p-6 w-full md:w-40 flex items-center justify-center md:justify-start border-b md:border-b-0 md:border-r border-slate-800">
+                      <div className="bg-slate-900/50 p-6 w-full md:w-50 flex items-center justify-center md:justify-start border-b md:border-b-0 md:border-r border-slate-800">
                         <span className="font-black text-xl text-white uppercase tracking-wider">{day.day}</span>
                       </div>
                       <div className="flex-1 p-4 grid grid-cols-1 gap-4">
@@ -598,7 +596,7 @@ const PublicWebsite = ({
       </section>
 
       {/* --- HIGHSCORE SECTION --- */}
-      <section id="highscores" className="py-24 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-slate-900 relative">
+      <section id="highscores" className="py-24 bg-slate-900/30 relative">
         <div className="absolute inset-0 from-slate-950 via-transparent to-slate-950"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -606,7 +604,7 @@ const PublicWebsite = ({
               <div className="text-center mb-12">
                 <span className="text-yellow-500 font-bold tracking-[0.2em] uppercase text-sm animate-pulse">Arcade Mode</span>
                 <h2 className="text-5xl font-black text-white mt-2 mb-6 shadow-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">
-                  HALL OF <span className="text-transparent bg-clip-text from-yellow-400 to-orange-500">FAME</span>
+                  HALL OF <span className="text-transparent bg-gradient-to-br bg-clip-text from-yellow-400 to-orange-500">FAME</span>
                 </h2>
                 <button
                   onClick={() => document.getElementById("scoreForm")?.scrollIntoView({ behavior: "smooth" })}
@@ -756,8 +754,8 @@ const PublicWebsite = ({
                   <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
                   <div className="absolute inset-0 bg-slate-950/60 flex flex-col items-center justify-center text-center p-6">
                     <MapPin size={40} className="text-red-500 mb-4" />
-                    <h3 className="text-3xl font-black text-white">Campus Spoor Noord</h3>
-                    <p className="text-gray-300">Viaduct-Dam 2A, Antwerpen</p>
+                    <h3 className="text-3xl font-black text-white">Campus Ellerman</h3>
+                    <p className="text-gray-300">ELL 03.14</p>
                   </div>
                 </div>
               </div>
