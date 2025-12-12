@@ -4,34 +4,23 @@ import {
   Clock,
   MapPin,
   ThumbsUp,
-  Cpu,
-  Monitor,
-  Zap,
   Menu,
   X,
-  Trophy,
-  Users,
   ChevronDown,
   ChevronUp,
-  HelpCircle,
   Lock,
-  Settings,
   Trash2,
   Plus,
   LogOut,
   Loader2,
   Save,
-  CheckCircle2,
   LayoutDashboard,
-  MousePointer2,
   CalendarDays,
   Swords,
   User,
   Medal,
   Check,
   Ban,
-  ListPlus,
-  Joystick,
 } from "lucide-react";
 
 // --- FIREBASE IMPORTS ---
@@ -41,7 +30,7 @@ import { getFirestore, doc, setDoc, collection, addDoc, deleteDoc, updateDoc, on
 
 // --- CONFIGURATIE ---
 const firebaseConfig = {
-  apiKey: "AIzaSyBYm96icfFLBHs-HyRMML3DNYXp8XvdHXQ", // Vervang indien nodig
+  apiKey: import.meta.env.VITE_FIRE_BASE_API_KEY,
   authDomain: "a-gaming-117d9.firebaseapp.com",
   projectId: "a-gaming-117d9",
   storageBucket: "a-gaming-117d9.firebasestorage.app",
@@ -399,7 +388,7 @@ const PublicWebsite = ({
               </div>
               <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9]">
                 LEVEL{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-red-600 to-red-400" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.1)" }}>
+                <span className="text-transparent bg-clip-text from-red-600 to-red-400" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.1)" }}>
                   UP
                 </span>{" "}
                 <br />
@@ -427,7 +416,7 @@ const PublicWebsite = ({
           </div>
           <div className="flex-1 w-full flex justify-center perspective-container">
             <TiltCard className="w-full max-w-md" perspective={2000}>
-              <div className="bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700/50 rounded-3xl p-1 shadow-2xl relative group overflow-hidden">
+              <div className="from-slate-800 to-slate-950 border border-slate-700/50 rounded-3xl p-1 shadow-2xl relative group overflow-hidden">
                 <div className="relative bg-slate-900/90 h-full w-full rounded-[20px] p-8 flex flex-col items-center justify-center min-h-[450px] border border-white/5">
                   <div className="relative w-40 h-40 mb-8 group-hover:scale-110 transition-transform duration-500">
                     <div className="absolute inset-0 bg-red-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
@@ -610,14 +599,14 @@ const PublicWebsite = ({
 
       {/* --- HIGHSCORE SECTION --- */}
       <section id="highscores" className="py-24 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-slate-900 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950"></div>
+        <div className="absolute inset-0 from-slate-950 via-transparent to-slate-950"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal direction="up">
               <div className="text-center mb-12">
                 <span className="text-yellow-500 font-bold tracking-[0.2em] uppercase text-sm animate-pulse">Arcade Mode</span>
                 <h2 className="text-5xl font-black text-white mt-2 mb-6 shadow-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">
-                  HALL OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">FAME</span>
+                  HALL OF <span className="text-transparent bg-clip-text from-yellow-400 to-orange-500">FAME</span>
                 </h2>
                 <button
                   onClick={() => document.getElementById("scoreForm")?.scrollIntoView({ behavior: "smooth" })}
@@ -631,7 +620,7 @@ const PublicWebsite = ({
             {/* Leaderboard */}
             <ScrollReveal direction="up" delay={200}>
               <div className="bg-slate-950/80 backdrop-blur rounded-3xl border-4 border-slate-800 p-2 shadow-2xl overflow-hidden relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-red-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 from-blue-500 via-purple-500 to-red-500"></div>
                 <div className="bg-slate-900 rounded-2xl overflow-hidden">
                   <table className="w-full text-left">
                     <thead>
@@ -802,7 +791,6 @@ const PublicWebsite = ({
   );
 };
 
-// --- LOGIN SCREEN ---
 const LoginScreen = ({ onLoginSuccess, onBack }: { onLoginSuccess: () => void; onBack: () => void }) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
